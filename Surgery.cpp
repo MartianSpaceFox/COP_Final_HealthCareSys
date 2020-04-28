@@ -2,7 +2,7 @@
 #include<iomanip>
 using namespace std;
 
-// Adding Header file - JN
+// Added Header file - JN
 #include "Surgery.h"
 
 class Surgery {
