@@ -4,16 +4,16 @@
 #include <string>
 #include <sstream> 
 
-using namespace std;
 //Header files
 #include "PatientAccount.h"
 #include "Pharmacy.h"
-#include "Surgery.h"
+//#include "Surgery.h"
+
+using namespace std;
 
 
 
-int main()
-{
+int main() {
 ifstream inFile;
 
 string procedureID;
