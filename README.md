@@ -6,7 +6,7 @@ READ ME
 ----------------------
 Program Title: Hospital System Final Project
 
-Program Authors:
+<b>Program Authors:
 
   Zachary Alan Morris, morrisza2@my.palmbeachstate.edu
 
