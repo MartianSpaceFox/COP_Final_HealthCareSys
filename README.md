@@ -4,9 +4,9 @@ Professor Dr. Kharis Kerby Sibayan
 
 READ ME
 ----------------------
-Program Title: Hospital System Final Project
+<b>Program Title:</b> Hospital System Final Project
 
-<b>Program Authors:
+<b>Program Authors:</b>
 
   Zachary Alan Morris, morrisza2@my.palmbeachstate.edu
 
@@ -18,8 +18,8 @@ Program Title: Hospital System Final Project
 
 ------------------------
 
-GitHub: https://github.com/MartianSpaceFox/COP_Final_HealthCareSys
+<b>GitHub:</b> https://github.com/MartianSpaceFox/COP_Final_HealthCareSys
 
-Comments:
+<b>Comments:</b>
 
 [![Run on Repl.it](https://repl.it/badge/github/MartianSpaceFox/COP_Final_HealthCareSys)](https://repl.it/github/MartianSpaceFox/COP_Final_HealthCareSys)
