@@ -5,15 +5,10 @@ using namespace std;
 // Added Header file - JN
 #include "Surgery.h"
 
-class Surgery {
-  public:
-  double surgeryCost(char);
+//Cut class declaration and pasted into the Surgery.h header file. -JN
 
-  private:
-  char answer;
-  int choice;
-  double amount = 0;
-};
+//Removed main function: "int main {...} ;", only needed for main.cpp, not needed for either class files. -JN
+
 
 double Surgery::surgeryCost(char answer) {
   if (answer == 'y') {
@@ -50,19 +45,4 @@ double Surgery::surgeryCost(char answer) {
   return amount;
 }
 
-int main() {
-  Surgery surgery;
-  char answer;
-  double total = 0;
-  cout << "Did you get surgery (y/n)" << endl;
-  cin >> answer;
-  while (answer != 'y' && answer != 'n') {
-    cout << "Invalid input." << endl;
-    cout << "Please input y or n" << endl;
-    cin >> answer;
-  }
-  total = total + surgery.surgeryCost(answer);
-  cout << "Your total is : $" << total;
-  return 0;
-
-}
+//Removed "return 0;", only needed for main.cpp, not needed for either class files. -JN
