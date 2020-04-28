@@ -3,7 +3,7 @@ Final Group Project for Group# 4 COP2334 Tues/Thurs 2:00PM - 3:15.
 Professor Dr. Kharis Kerby Sibayan
 
 READ ME
-
+----------------------
 Program Title: Hospital System Final Project
 
 Program Authors:
@@ -16,7 +16,7 @@ Program Authors:
 
   Christian Reynaldo Rodriguez, rodriguezcr12@my.palmbeachstate.edu
 
-
+------------------------
 
 GitHub: https://github.com/MartianSpaceFox/COP_Final_HealthCareSys
 
