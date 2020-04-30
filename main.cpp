@@ -7,7 +7,7 @@
 //Header files
 #include "PatientAccount.h"
 #include "Pharmacy.h"
-//#include "Surgery.h"
+#include "Surgery.h"
 
 using namespace std;
 
@@ -22,6 +22,7 @@ string amount;
 
  
 inFile.open("jfkmedicalcenter_cm.csv");
+
 if (inFile.is_open()) {
     cout << "File has been opened" << endl;
 }
@@ -33,7 +34,7 @@ else {
 while (!inFile.eof()) {
     getline ( inFile, procedureID, ',' );
     getline ( inFile, description, ',' );
-    getline ( inFile, amount, ',' );
+    getline ( inFile, amount, '\n' );
 
     cout << endl;
     cout << "Procedure ID: " << procedureID << endl;
