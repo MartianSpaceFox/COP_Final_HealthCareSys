@@ -1,5 +1,5 @@
 // PATIENTACCOUNT FUNCTION DEFINITIONS
-#include "patientAccount.h"
+#include "PatientAccount.h"
 #include <iostream>
 using namespace std;
 
