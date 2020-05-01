@@ -1,17 +1,17 @@
 #ifndef SURGERY_H
 #define SURGERY_H
+#include "PatientAccount.h"
 
 //Copied from Christian's first code submission: https://repl.it/@ChristianRodr12/MajorTriangularMacrolanguage 
 
 class Surgery {
 
 public:
-  double surgeryCost(char);
+  int getSurgeryType();
+  void updateAccount(PatientAccount&, int); // This allows surgery costs to be added to charges in PatientAccount -ZM
 
   private:
-  char answer;
-  int choice;
-  double amount = 0;
+  double amount;
 };
 
 #endif

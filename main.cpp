@@ -14,7 +14,29 @@ using namespace std;
 
 
 int main() {
-ifstream inFile;
+
+int surgeryType;
+int medicationType;
+
+PatientAccount patient1; // Creates a new patient account
+Surgery surgery; // Creates the surgery object
+Pharmacy pharmacy; // Creates the pharmacy object (NEEDS TO BE CREATED)
+
+patient1.setDays(); // Invokes the "Set Days" function on the Patient Account
+    
+surgeryType = surgery.getSurgeryType;
+medicationType = pharmacy.getMedicationType; // ADD THIS TO PHARMACY FUNCTIONS, SAME AS SURGERY
+    
+surgery.updateAccount(patient1, sugeryType); // Invokes the "Update Account" function in surgery.cpp to add charges
+pharmacy.updateAccount(patient1, medicationType); // TBD - TO INVOKE "UPDATE ACCOUNT" FUNCTION IN PHARMACY.CPP (SAME AS SURGERY, NEEDS TO BE ADDED)
+    
+    
+// FINAL OUTPUT
+cout << fixed << setprecision(2);
+cout << "Total Charges: " << patient1.getCharges() << endl; // UPDATE TO GET ORIGINAL PRICES
+
+
+/*ifstream inFile;
 
 string procedureID;
 string description;
@@ -45,6 +67,8 @@ while (!inFile.eof()) {
 
 inFile.close();
 system("pause");
+*/
+
 return 0;
 
 } 
