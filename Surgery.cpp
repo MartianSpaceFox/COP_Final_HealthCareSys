@@ -15,12 +15,15 @@ using namespace std;
 // Updated to integrate with main (Selects surgery type for price) - ZM
 int Surgery::getSurgeryType() {
     int choice;
-    cout << "Please enter the surgery type. Enter 0 if no surgery needed." << endl;
-    cout << "1 - Minor surgery $ 600" << endl;
-    cout << "2 - Eye surgery $ 1,250" << endl;
-    cout << "3 - Knee replacement  $ 6,000" << endl;
-    cout << "4 - Heart surgery $12,000" << endl;
-    cout << "5 - Brain surgery $28,000" << endl;
+    cout << endl;
+    cout << "Please enter the surgery type that the patient had received. Enter 0 if no surgery was needed." << endl;
+    cout << endl;
+    cout << "[1] - Minor surgery $ 600" << endl;
+    cout << "[2] - Eye surgery $ 1,250" << endl;
+    cout << "[3] - Knee replacement  $ 6,000" << endl;
+    cout << "[4] - Heart surgery $12,000" << endl;
+    cout << "[5] - Brain surgery $28,000" << endl;
+    cout << endl;
     
     // Validation -- Updated to include 0 - ZM
     cin >> choice;
@@ -30,6 +33,7 @@ int Surgery::getSurgeryType() {
       cin >> choice;
     }
     return choice;
+    cout << endl;
 }
 
 

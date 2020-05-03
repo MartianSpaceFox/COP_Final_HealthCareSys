@@ -36,14 +36,19 @@ void Pharmacy::updateAccount(PatientAccount& patient, int medicine){
 //CR
 int Pharmacy::getMedicationType() {
   int choice;
-  cout << "Please enter medication type\n" << endl;
-  cout << "1 - Asprin $10" << endl;
-  cout << "2 - Sleeping pills $20" << endl;
-  cout << "3 - Pain pills $50" << endl;
-  cout << "4 - Local anesthetic $75" << endl;
-  cout << "5 - General anesthetic $300" << endl;
+  cout << endl;
+  cout << "Please enter the medication type prescribed to patient.\n" << endl;
+  cout << endl;
+  cout << "[1] - Asprin $10" << endl;
+  cout << "[2] - Sleeping pills $20" << endl;
+  cout << "[3] - Pain pills $50" << endl;
+  cout << "[4] - Local anesthetic $75" << endl;
+  cout << "[5] - General anesthetic $300" << endl;
+  cout << endl;
 
   cin >> choice;
+  cout << endl;
+
   while (choice < 0 || choice > 5) {
       cout << "Invalid input." << endl;
       cout << "Please input 0 to 5" << endl;

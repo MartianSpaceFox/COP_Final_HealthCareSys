@@ -16,7 +16,7 @@ PatientAccount::PatientAccount()
 void PatientAccount::setDays()
 {
     // Gets days
-    cout << "How many days are you in the hospital?" << endl;
+    cout << "How many days was the patient in the hospital?" << endl;
     cin >> days;
     
     // Validation
