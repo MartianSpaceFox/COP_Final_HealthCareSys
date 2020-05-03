@@ -1,10 +1,11 @@
 // Example program
+#include "Surgery.h"
 #include <iostream>
-#include<iomanip>
+#include <iomanip>
 using namespace std;
 
 // Added Header file - JN
-#include "Surgery.h"
+
 
 //Cut class declaration and pasted into the Surgery.h header file. -JN
 
@@ -12,7 +13,7 @@ using namespace std;
 
 
 // Updated to integrate with main (Selects surgery type for price) - ZM
-int Surgery::getSurgeryType {
+int Surgery::getSurgeryType() {
     int choice;
     cout << "Please enter the surgery type. Enter 0 if no surgery needed." << endl;
     cout << "1 - Minor surgery $ 600" << endl;
