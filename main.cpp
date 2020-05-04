@@ -85,9 +85,9 @@ cout << &letterHead << endl;
 
     // FINAL OUTPUT
     if (insuredStatus == 'N'){
-      double uninsuredDiscount = charges * 0.20;
-      cout << "20% Uninsured Discount" << "     -" << uninsuredDiscount << endl;
-      //PatientAccount::updateCharges(double newCharge)= PatientAccount::updateCharges(double newCharge) - uninsuredDiscount;
+      double afterDiscount=0.00;
+      double uninsuredDiscount = patient1.getCharges() * 0.20;
+      cout << "20% Uninsured Discount" << "         -" << uninsuredDiscount << endl;
     }
     //cout << fixed << setprecision(2);
     cout << left << setw(30) << setfill(' ') << "Total Charges: " << "$" << patient1.getCharges() << endl; // UPDATE TO GET ORIGINAL PRICES
