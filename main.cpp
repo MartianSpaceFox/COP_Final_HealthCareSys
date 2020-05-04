@@ -88,7 +88,7 @@ cout << &letterHead << endl;
   cout << "Patient Charges" << endl;
   cout << endl;
     cout << fixed << setprecision(2);
-    cout << left << setw(30) << setfill(' ') << "Hospital Room (@ $1987.00 per day): " << roomCharge << endl; // NEED TO ADD #DAYS VARIABLE AND ROOM RATE
+    cout << left << setw(30) << setfill(' ') << "Hospital Room: " << roomCharge << endl; // NEED TO ADD #DAYS VARIABLE AND ROOM RATE
     cout << left << setw(30) << setfill(' ') << "Surgery Charges:" << surgeryCharge << endl;  
     cout << left << setw(30) << setfill(' ') << "Pharmacy Charges:" << medCharge << endl;
     cout << left << setw(30) << setfill(' ') << "Subtotal:" << subtotal << endl;
