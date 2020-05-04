@@ -12,7 +12,6 @@ class PatientAccount
         void setDays(); // Used to get days in hospital
         void updateCharges(double); // Adds charges to total later
         double getCharges();
-        
 };
 
 #endif

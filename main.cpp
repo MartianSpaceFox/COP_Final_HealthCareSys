@@ -1,5 +1,3 @@
-// CONCEPT MAIN.CPP (ALLOWS FOR EASY INTEGRATION) -ZM
-
 //Libraries
 #include <iostream>
 #include <iomanip>
@@ -7,7 +5,7 @@
 #include <string>
 #include <sstream> 
 
-//Header files
+//Class Header files
 #include "PatientAccount.h"
 #include "Pharmacy.h"
 #include "Surgery.h"
@@ -19,6 +17,7 @@ int main()
 char insuredStatus;
 int surgeryType;
 int medicationType;
+double afterDiscount=0.00;
 
 //Patient Discharge/Release Statement Letterhead Function
   void letterHead (); {
@@ -57,6 +56,7 @@ cout << &letterHead << endl;
     Pharmacy pharmacy; // Creates the pharmacy object (NEEDS TO BE CREATED)
 
     patient1.setDays(); // Invokes the "Set Days" function on the Patient Account
+    //patient1.getDays(); // JN
     
     surgeryType = surgery.getSurgeryType();
     medicationType = pharmacy.getMedicationType(); // ADD THIS TO PHARMACY FUNCTIONS, SAME AS SURGERY
@@ -78,18 +78,19 @@ cout << &letterHead << endl;
   cout << "Patient Charges" << endl;
   cout << endl;
     cout << fixed << setprecision(2);
-    cout << left << setw(30) << setfill(' ') << "Hospital Room:" << " # days @ " << "[ROOM RATE]" << "$" << endl;
+    cout << left << setw(30) << setfill(' ') << "Hospital Room (" << " # days @ 1987.00 per day:" << "$" << endl; // NEED TO ADD #DAYS VARIABLE AND ROOM RATE
     cout << left << setw(30) << setfill(' ') << "Surgery Charges: " << endl;  
     cout << left << setw(30) << setfill(' ') << "Pharmacy Charges: " << endl;
     cout << right << setw(37) << setfill(' ') << "-------" << endl;
 
     // FINAL OUTPUT
-    if (insuredStatus == 'N'){
-      double afterDiscount=0.00;
+    if (insuredStatus == 'N' || 'n'){
+      double afterDiscount=0.00; // New total minus the 20% discount.
       double uninsuredDiscount = patient1.getCharges() * 0.20;
-      cout << "20% Uninsured Discount" << "         -" << uninsuredDiscount << endl;
+      //cout << fixed << setprecision(2);
+      cout << "20% Uninsured Discount" << "        -" << fixed << setprecision(2)<< uninsuredDiscount << endl;
     }
-    //cout << fixed << setprecision(2);
+    
     cout << left << setw(30) << setfill(' ') << "Total Charges: " << "$" << patient1.getCharges() << endl; // UPDATE TO GET ORIGINAL PRICES
 
     return 0;

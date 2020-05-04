@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-const double ROOM_RATE = 0.00; // NEEDS TO BE SET TO A VALUE - TBD LATER (SETS CONSTANT ROOM RATE TO ADD TO CHARGES)
+const double ROOM_RATE = 1987.00; // SET TO LOWEST VALUE FROM JFK DETAILED PRICELIST CSV FILE. - JN -NEEDS TO BE SET TO A VALUE - TBD LATER (SETS CONSTANT ROOM RATE TO ADD TO CHARGES)
 
 // Default Constructor
 PatientAccount::PatientAccount()
@@ -40,4 +40,6 @@ double PatientAccount::getCharges()
 {
     return charges;
 }
+
+
 
