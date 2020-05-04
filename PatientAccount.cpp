@@ -40,6 +40,3 @@ double PatientAccount::getCharges()
 {
     return charges;
 }
-
-
-

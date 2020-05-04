@@ -18,13 +18,13 @@ int Surgery::getSurgeryType() {
     cout << endl;
     cout << "Please enter the surgery type that the patient had received. Enter 0 if no surgery was needed." << endl;
     cout << endl;
-    cout << "[1] - Minor surgery $ 600" << endl;
-    cout << "[2] - Eye surgery $ 1,250" << endl;
-    cout << "[3] - Knee replacement  $ 6,000" << endl;
-    cout << "[4] - Heart surgery $12,000" << endl;
-    cout << "[5] - Brain surgery $28,000" << endl;
+    cout << "[1] - Elective surgery $ 1,400" << endl;
+    cout << "[2] - Knee surgery $ 1,500" << endl;
+    cout << "[3] - General surgery per hr  $ 2,428" << endl;
+    cout << "[4] - ICU/ER surgery $8,109" << endl;
+    cout << "[5] - C- Section surgery $11,602" << endl;
     cout << endl;
-    
+    //KIT CRANIOTOMY 5.31MM  3001.18  (Brain surgery)
     // Validation -- Updated to include 0 - ZM
     cin >> choice;
     while (choice < 0 || choice > 5) {
@@ -40,19 +40,19 @@ int Surgery::getSurgeryType() {
 // Gets the price for the selected surgery and sends it to the Patient Account -ZM
 void Surgery::updateAccount(PatientAccount& pt, int type) {
     if (type == 1) {
-        amount = 600;
+        amount = 1400;
     }
     else if (type == 2) {
-        amount = 1250;
+        amount = 1500;
     }
     else if (type == 3) {
-        amount = 6000;
+        amount = 2428;
     }
     else if (type == 4) {
-        amount = 12000;
+        amount = 8109;
     }
     else if (type == 5) {
-        amount = 28000;
+        amount = 11602;
     }
     else {
         amount = 0;

@@ -17,7 +17,12 @@ int main()
 char insuredStatus;
 int surgeryType;
 int medicationType;
-double afterDiscount=0.00;
+double roomCharge = 0.00; // Allows output of room rate only
+double surgeryCharge = 0.00; // Allows output of surgery charge only
+double medCharge = 0.00; // Allows output of pharmacy charge only
+double subtotal = 0.00; // Allows output of charges without discounts
+double afterDiscount=0.00; // New total minus the 20% discount initialized to 0
+
 
 //Patient Discharge/Release Statement Letterhead Function
   void letterHead (); {
@@ -53,16 +58,21 @@ cout << &letterHead << endl;
 
     PatientAccount patient1; // Creates a new patient account
     Surgery surgery; // Creates the surgery object
-    Pharmacy pharmacy; // Creates the pharmacy object (NEEDS TO BE CREATED)
+    Pharmacy pharmacy; // Creates the pharmacy object
 
     patient1.setDays(); // Invokes the "Set Days" function on the Patient Account
-    //patient1.getDays(); // JN
+    roomCharge = patient1.getCharges(); // Gets the standalone room charge
     
+    // Invokes "Get surgery/medication type for later functions"
     surgeryType = surgery.getSurgeryType();
-    medicationType = pharmacy.getMedicationType(); // ADD THIS TO PHARMACY FUNCTIONS, SAME AS SURGERY
-    
-    surgery.updateAccount(patient1, surgeryType); // Invokes the "Update Account" function in surgery.cpp to add charges
-    pharmacy.updateAccount(patient1, medicationType); // TBD - TO INVOKE "UPDATE ACCOUNT" FUNCTION IN PHARMACY.CPP (SAME AS SURGERY, NEEDS TO BE ADDED)
+    medicationType = pharmacy.getMedicationType(); 
+
+    // Invokes "Update Account" to add charges
+    surgery.updateAccount(patient1, surgeryType);
+    surgeryCharge = patient1.getCharges() - roomCharge; // Gets surgery charge only
+    pharmacy.updateAccount(patient1, medicationType);
+    medCharge = patient1.getCharges() - roomCharge - surgeryCharge; // Gets medication charge only
+    subtotal = roomCharge + surgeryCharge + medCharge;
 
   cout << left << setw(50) << setfill('*') << "" << endl;
   cout << "          Patient Discharge Statement" << endl;
@@ -78,21 +88,25 @@ cout << &letterHead << endl;
   cout << "Patient Charges" << endl;
   cout << endl;
     cout << fixed << setprecision(2);
-    cout << left << setw(30) << setfill(' ') << "Hospital Room (" << " # days @ 1987.00 per day:" << "$" << endl; // NEED TO ADD #DAYS VARIABLE AND ROOM RATE
-    cout << left << setw(30) << setfill(' ') << "Surgery Charges: " << endl;  
-    cout << left << setw(30) << setfill(' ') << "Pharmacy Charges: " << endl;
+    cout << left << setw(30) << setfill(' ') << "Hospital Room (@ $1987.00 per day): " << roomCharge << endl; // NEED TO ADD #DAYS VARIABLE AND ROOM RATE
+    cout << left << setw(30) << setfill(' ') << "Surgery Charges:" << surgeryCharge << endl;  
+    cout << left << setw(30) << setfill(' ') << "Pharmacy Charges:" << medCharge << endl;
+    cout << left << setw(30) << setfill(' ') << "Subtotal:" << subtotal << endl;
     cout << right << setw(37) << setfill(' ') << "-------" << endl;
 
-    // FINAL OUTPUT
-    if (insuredStatus == 'N' || 'n'){
-      double afterDiscount=0.00; // New total minus the 20% discount.
-      double uninsuredDiscount = patient1.getCharges() * 0.20;
-      //cout << fixed << setprecision(2);
-      cout << "20% Uninsured Discount" << "        -" << fixed << setprecision(2)<< uninsuredDiscount << endl;
-    }
-    
-    cout << left << setw(30) << setfill(' ') << "Total Charges: " << "$" << patient1.getCharges() << endl; // UPDATE TO GET ORIGINAL PRICES
+double uninsuredDiscount = patient1.getCharges() * 0.20;
+afterDiscount = patient1.getCharges() - uninsuredDiscount;
 
+    // FINAL OUTPUT OF SUB-TOTALS AND TOTAL
+if (insuredStatus == 'N' || insuredStatus == 'n'){
+  
+  cout << "20% Uninsured Discount:" << "      - " << fixed << setprecision(2) << uninsuredDiscount << endl;
+  cout << left << setw(30) << setfill(' ') << "Total Charges: " << "$" << afterDiscount << endl;
+}
+else {
+  cout << "NO DISCOUNT APPLIED (Patient has insurance)" << endl;
+    cout << left << setw(30) << setfill(' ') << "Total Charges: " << "$" << subtotal << endl; // UPDATE TO GET ORIGINAL PRICES
+}
     return 0;
     
 } 
