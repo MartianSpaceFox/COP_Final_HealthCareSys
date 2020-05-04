@@ -16,7 +16,7 @@ using namespace std;
 
 int main() 
 {
-  
+char insuredStatus;
 int surgeryType;
 int medicationType;
 
@@ -47,6 +47,11 @@ cout << &letterHead << endl;
     cout << left << setw(40) << setfill(' ') << "To generate a discharge statement of charges please enter the required information in the following fields." << endl;
     cout << endl;
 
+    //Added by JN to add insurance option detail. 
+    cout << "Does the patient have health insurance? Enter Y or N." << endl;
+    cin >> insuredStatus;
+    cout << endl;
+
     PatientAccount patient1; // Creates a new patient account
     Surgery surgery; // Creates the surgery object
     Pharmacy pharmacy; // Creates the pharmacy object (NEEDS TO BE CREATED)
@@ -59,10 +64,19 @@ cout << &letterHead << endl;
     surgery.updateAccount(patient1, surgeryType); // Invokes the "Update Account" function in surgery.cpp to add charges
     pharmacy.updateAccount(patient1, medicationType); // TBD - TO INVOKE "UPDATE ACCOUNT" FUNCTION IN PHARMACY.CPP (SAME AS SURGERY, NEEDS TO BE ADDED)
 
-  cout << "Patient Discharge Statement" << endl;
-  cout << left << setw(30) << setfill('*') << "" << endl;
-    cout << "Patient Charges" << endl;
-    cout << endl;
+  cout << left << setw(50) << setfill('*') << "" << endl;
+  cout << "          Patient Discharge Statement" << endl;
+  cout << endl;
+  cout << "Patient Name: Jane Doe" << endl;
+  cout << "Account Number: JD123456789" << endl;
+  cout << "Billing Address: 12345 Milky Way, West Palm Beach, FL 33409" << endl;
+  cout << "Insurance Status Y/N: " << insuredStatus << endl;
+  cout << endl;
+  
+  cout << left << setw(15) << setfill('*') << "" << endl;
+  cout << endl;
+  cout << "Patient Charges" << endl;
+  cout << endl;
     cout << fixed << setprecision(2);
     cout << left << setw(30) << setfill(' ') << "Hospital Room:" << " # days @ " << "[ROOM RATE]" << "$" << endl;
     cout << left << setw(30) << setfill(' ') << "Surgery Charges: " << endl;  
@@ -70,9 +84,13 @@ cout << &letterHead << endl;
     cout << right << setw(37) << setfill(' ') << "-------" << endl;
 
     // FINAL OUTPUT
+    if (insuredStatus == 'N'){
+      double uninsuredDiscount = charges * 0.20;
+      cout << "20% Uninsured Discount" << "     -" << uninsuredDiscount << endl;
+      //PatientAccount::updateCharges(double newCharge)= PatientAccount::updateCharges(double newCharge) - uninsuredDiscount;
+    }
     //cout << fixed << setprecision(2);
     cout << left << setw(30) << setfill(' ') << "Total Charges: " << "$" << patient1.getCharges() << endl; // UPDATE TO GET ORIGINAL PRICES
-
 
     return 0;
     
