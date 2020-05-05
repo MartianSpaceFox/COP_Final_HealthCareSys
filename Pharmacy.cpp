@@ -39,6 +39,7 @@ int Pharmacy::getMedicationType() {
   cout << endl;
   cout << "Please enter the medication type prescribed to patient.\n" << endl;
   cout << endl;
+  cout << "[0] - None" << endl;
   cout << "[1] - Ibuprofen 600mg $16" << endl;
   cout << "[2] - IV Fluids $773" << endl;
   cout << "[3] - Morphine Injection $3,955" << endl;

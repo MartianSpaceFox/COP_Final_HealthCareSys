@@ -16,8 +16,9 @@ using namespace std;
 int Surgery::getSurgeryType() {
     int choice;
     cout << endl;
-    cout << "Please enter the surgery type that the patient had received. Enter 0 if no surgery was needed." << endl;
+    cout << "Please enter the surgery type that the patient had received." << endl;
     cout << endl;
+    cout << "[0] - None" << endl;
     cout << "[1] - Elective surgery $ 1,400" << endl;
     cout << "[2] - Knee surgery $ 1,500" << endl;
     cout << "[3] - General surgery per hr  $ 2,428" << endl;

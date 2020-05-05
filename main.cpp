@@ -71,6 +71,13 @@ cout << &letterHead << endl;
     surgery.updateAccount(patient1, surgeryType);
     surgeryCharge = patient1.getCharges() - roomCharge; // Gets surgery charge only
     pharmacy.updateAccount(patient1, medicationType);
+
+    while (medicationType != 0) {  //while loop to see if more medication is needed
+      cout << "Was there any other medications?" << endl;
+      medicationType = pharmacy.getMedicationType(); 
+      pharmacy.updateAccount(patient1, medicationType);
+    }
+
     medCharge = patient1.getCharges() - roomCharge - surgeryCharge; // Gets medication charge only
     subtotal = roomCharge + surgeryCharge + medCharge;
 
@@ -94,7 +101,7 @@ cout << &letterHead << endl;
     cout << left << setw(30) << setfill(' ') << "Subtotal:" << subtotal << endl;
     cout << right << setw(37) << setfill(' ') << "-------" << endl;
 
-double uninsuredDiscount = patient1.getCharges() * 0.20;
+double uninsuredDiscount = patient1.getCharges() * 0.20; // Creates discount for uninsured patients
 afterDiscount = patient1.getCharges() - uninsuredDiscount;
 
     // FINAL OUTPUT OF SUB-TOTALS AND TOTAL
